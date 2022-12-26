@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "form.css" %>
+
 <%= form_with model: user do |form| %>
   <div>
     <%= form.label :username %><br>
@@ -9,7 +11,7 @@
 
   <div>
     <%= form.label :user_password %><br>
-    <%= form.text_area :user_password %><br>
+    <%= form.text_field :user_password %><br>
     <% user.errors.full_messages_for(:user_password).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -31,7 +33,7 @@
     <% end %>
   </div>
 
-  <div>
+  <button type="signup">
     <%= form.submit %>
-  </div>
+  </button>
 <% end %>

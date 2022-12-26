@@ -1,20 +1,59 @@
-<h1>User Name : <%= @user.username %></h1>
+<%= stylesheet_link_tag "show.css" %>
 
-<p>User Address : <%= @user.user_address %></p>
+<header class="header-area">
+  <div class="navbar-area">
+    <div class="container">
+      <nav class="site-navbar">
+        <a href="#home" class="site-logo">SMART ORDER</a>
+        <ul>
+          <li> <%= link_to "Home", root_path %> </li>
+        </ul>
 
-<p>User Phone Number : <%= @user.user_phonenumber %></p>
+        <button class="nav-toggler">
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </div>
 
-<ul>
-    <li><%= link_to "Edit User Details ", edit_user_path(@user) %></li>
-  </ul>
 
-  <li><%= link_to "Delete User", user_path(@user), data: {
-    turbo_method: :delete,
-    turbo_confirm: :"Are you want to delete the User?"
-  } %></li>
-  </ul>
+  <div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Manage <b>User</b></h2>
+          </div>
+          
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr> 
+            <td><%= @user.username %></td>
+            <td><%= @user.user_address %></td>
+            <td><%= @user.user_phonenumber %></td>
+            <td>
+              <%= link_to "Edit User Details ", edit_user_path(@user) %><a class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+              <%= link_to "Delete User", user_path(@user), data: {
+                turbo_method: :delete,
+                turbo_confirm: :"Are you want to delete the User?"}%> <a class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
 
-<br><%= link_to "Home Page ", root_path(@user) %></li>
 
 <h2>Card Details</h2>
 
@@ -22,4 +61,4 @@
   
   <h2>Add a Card:</h2>
  <%= render 'cards/form' %>
-
+</div>

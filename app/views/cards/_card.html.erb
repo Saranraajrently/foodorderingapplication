@@ -7,15 +7,12 @@
       <strong>Card  Number:</strong>
       <%= card.card_number %>
     </p>
-<!-- 
-    <p>
-      <strong>Card id:</strong>
-      <%= card.id %>
-    </p> -->
+
     
     <%= link_to "Delete Card", user_card_path(@user,card.id) , data: {
       turbo_method: :delete,
       turbo_confirm: :"Are you want to delete the Card Detail?"
-    } %></li>
+    } %>
+    </li>
  
 
