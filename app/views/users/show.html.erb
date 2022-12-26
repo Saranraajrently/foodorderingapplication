@@ -14,29 +14,12 @@
   } %></li>
   </ul>
 
-  <h2>Card Details</h2>
-  <% @user.cards.each do |card| %>
-    <p>
-      <strong>Card Name:</strong>
-      <%= card.card_name %>
-    </p>
+<br><%= link_to "Home Page ", root_path(@user) %></li>
+
+<h2>Card Details</h2>
+
+ <%= render @user.cards %> 
   
-    <p>
-      <strong>Card  Number:</strong>
-      <%= card.card_number %>
-    </p>
-  <% end %>
   <h2>Add a Card:</h2>
-<%= form_with model: [ @user, @user.cards.build ] do |form| %>
-  <p>
-    <%= form.label :card_name %><br>
-    <%= form.text_field :card_name %>
-  </p>
-  <p>
-    <%= form.label :card_number %><br>
-    <%= form.text_area :card_number %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+ <%= render 'cards/form' %>
+

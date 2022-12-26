@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all 
+    @users = User.all.order("id ASC") # Returns all users sorted in ascending order by name
+
   end
 
   def show

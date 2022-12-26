@@ -5,6 +5,13 @@ class CardsController < ApplicationController
     redirect_to user_path(@user)
    end
    
+   def destroy
+        @card = Card.find(params[:id])
+        @card.destroy
+    
+        redirect_to root_path, status: :see_other
+   end
+
    private 
        def card_params
            params.require(:card).permit(:card_name, :card_number)
