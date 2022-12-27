@@ -1,6 +1,5 @@
 class MenusController < ApplicationController
 
-    http_basic_authenticate_with name: "Saran", password: "Test@12345", only: :show
     def index
     @menus =Menu.all
     end

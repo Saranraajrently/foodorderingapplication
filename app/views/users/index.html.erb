@@ -29,7 +29,7 @@
       <tr>
         <% @users.each do |user| %>
         <tr>
-          <td data-th="User Id">100<%= user.id %></td>
+          <td data-th="User Id"><%= user.id %></td>
           <td data-th="UserName"><%= link_to user.username, user %></td>
           <% end %>
         </tr>
