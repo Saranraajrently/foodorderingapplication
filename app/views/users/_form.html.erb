@@ -1,4 +1,8 @@
 <%= stylesheet_link_tag "form.css" %>
+<button style="width: 10%;margin-left: 30px;">
+
+  <%= link_to "Home", root_path %> 
+</button> 
 
 <%= form_with model: user do |form| %>
   <div>
@@ -11,7 +15,7 @@
 
   <div>
     <%= form.label :user_password %><br>
-    <%= form.text_field :user_password %><br>
+    <%= form.password_field  :user_password %><br>
     <% user.errors.full_messages_for(:user_password).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -34,6 +38,6 @@
   </div>
 
   <button type="signup">
-    <%= form.submit %>
+    <%= form.submit "Add User"%>
   </button>
 <% end %>

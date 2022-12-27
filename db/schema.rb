@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_26_063754) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_27_073044) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
     t.string "card_name"
-    t.integer "card_number"
+    t.bigint "card_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_26_063754) do
     t.string "menu_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "menu_image"
   end
 
   create_table "users", force: :cascade do |t|

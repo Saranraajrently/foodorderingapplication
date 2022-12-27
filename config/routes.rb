@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "menus#index"
+  root "users#home"
 
   resources :users do
     resources :cards

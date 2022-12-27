@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
+  http_basic_authenticate_with name: "Saran", password: "Test@12345", only: :index
+
   def index
     @users = User.all.order("id ASC") # Returns all users sorted in ascending order by name
 
   end
+  def home
+    @user = User.all
+  end
 
-  def show
+    def show
     @user = User.find(params[:id])
   end
   def new

@@ -21,8 +21,8 @@
     <div class="table-wrapper">
       <div class="table-title">
         <div class="row">
-          <div class="col-sm-6">
-            <h2>Manage <b>User</b></h2>
+          <div id="user">
+            <h3>Manage <b>User</b></h3>
           </div>
           
         </div>
@@ -54,11 +54,12 @@
     </div>
   </div>
 
+  <h2>Card Details</h2>
 
-<h2>Card Details</h2>
+  <%= render @user.cards %> 
 
- <%= render @user.cards %> 
+
   
   <h2>Add a Card:</h2>
- <%= render 'cards/form' %>
-</div>
+  <%= render 'cards/form' %>
+</div> 
